@@ -2,6 +2,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import storage from "redux-persist/lib/storage";
 import { persistReducer, persistStore } from "redux-persist";
+
 import { authReducer } from "./auth/slice";
 import { contactsReducer } from "./contacts/slice";
 import { filtersReducer } from "./filters/slice";
@@ -15,13 +16,12 @@ const authPersistConfig = {
 export const store = configureStore({
   reducer: {
     auth: persistReducer(authPersistConfig, authReducer),
-    contacts: contactsReducer, // ← buna `contacts` diyorsun, selector da bunu bekliyor
+    contacts: contactsReducer,   // ← ANAHTAR ADI tam olarak 'contacts' olmalı
     filters: filtersReducer,
   },
-  middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware({
+  middleware: (gDM) =>
+    gDM({
       serializableCheck: {
-        // persist actionlarını yoksay
         ignoredActions: [
           "persist/PERSIST",
           "persist/REHYDRATE",

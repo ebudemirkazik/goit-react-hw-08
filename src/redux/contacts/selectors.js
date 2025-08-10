@@ -1,7 +1,7 @@
 import { createSelector } from "@reduxjs/toolkit";
 import { selectFilter } from "../filters/selectors";
 
-export const selectContacts = (s) => s.contacts.items; // ← reducer anahtarı `contacts` olmalı
+export const selectContacts = s => s.contacts.items;
 
 export const selectFilteredContacts = createSelector(
   [selectContacts, selectFilter],

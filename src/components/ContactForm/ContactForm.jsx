@@ -1,9 +1,10 @@
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { useDispatch, useSelector } from 'react-redux';
-import { addContact } from '../../redux/contacts/contactsOps';
+import { addContact } from '../../redux/contacts/operations';
 import { selectContacts } from '../../redux/contacts/contactsSlice';
 import styles from './ContactForm.module.css';
+
 
 
 const schema = Yup.object({

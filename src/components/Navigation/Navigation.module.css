@@ -1,0 +1,23 @@
+/* src/components/Navigation/Navigation.module.css */
+.nav {
+  display: flex;
+  gap: 16px;
+}
+.link {
+  position: relative;
+  padding: 6px 10px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #16213e;
+  font-weight: 600;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.link:hover {
+  background: #edf2ff;
+  color: #0b2fff;
+}
+.active {
+  color: #0b2fff;
+  background: #e9efff;
+  box-shadow: inset 0 0 0 1px #cdd9ff;
+}

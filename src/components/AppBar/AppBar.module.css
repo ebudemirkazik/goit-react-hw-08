@@ -1,0 +1,29 @@
+/* src/components/AppBar/AppBar.module.css */
+.header {
+  position: sticky;
+  top: 0;
+  background: #ffffffcc;
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid #eef1ff;
+  z-index: 10;
+}
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 12px 16px;
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 16px;
+  align-items: center;
+}
+.logo {
+  font-weight: 800;
+  letter-spacing: 0.3px;
+  color: #0b2fff;
+  font-size: 28px;
+}
+.right {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}

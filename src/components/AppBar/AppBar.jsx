@@ -8,10 +8,16 @@ import styles from "./AppBar.module.css";
 
 export default function AppBar() {
   const isLoggedIn = useSelector(selectIsLoggedIn);
+
   return (
     <header className={styles.header}>
-      <Navigation />
-      {isLoggedIn ? <UserMenu /> : <AuthNav />}
+      <div className={styles.container}>
+        <div className={styles.logo}>Phonebook</div>
+        <Navigation />
+        <div className={styles.right}>
+          {isLoggedIn ? <UserMenu /> : <AuthNav />}
+        </div>
+      </div>
     </header>
   );
 }

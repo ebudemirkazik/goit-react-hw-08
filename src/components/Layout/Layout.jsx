@@ -6,7 +6,9 @@ export default function Layout({ children }) {
   return (
     <div className={styles.wrap}>
       <AppBar />
-      <main className={styles.main}>{children}</main>
+      <main className={styles.main}>
+        <div className={styles.container}>{children}</div>
+      </main>
     </div>
   );
 }

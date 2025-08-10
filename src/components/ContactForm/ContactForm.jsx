@@ -1,36 +1,33 @@
-import { Formik, Form, Field, ErrorMessage } from 'formik';
-import * as Yup from 'yup';
-import { useDispatch, useSelector } from 'react-redux';
-import { addContact } from '../../redux/contacts/operations';
-import { selectContacts } from '../../redux/contacts/contactsSlice';
-import styles from './ContactForm.module.css';
-
-
+import { Formik, Form, Field, ErrorMessage } from "formik";
+import * as Yup from "yup";
+import { useDispatch } from "react-redux";
+import { addContact } from "../../redux/contacts/operations";
+import styles from "./ContactForm.module.css";
 
 const schema = Yup.object({
-  name: Yup.string().min(3).max(50).required('Required'),
-  number: Yup.string().matches(/^[0-9-]+$/).min(3).max(20).required('Required'),
+  name: Yup.string().min(3).max(50).required("Required"),
+  number: Yup.string()
+    .matches(/^[0-9-]+$/)
+    .min(3)
+    .max(20)
+    .required("Required"),
 });
 
 export default function ContactForm() {
   const dispatch = useDispatch();
-  const contacts = useSelector(selectContacts);
 
-  const handleSubmit = (values, { resetForm }) => {
-    const exists = contacts.some(
-      c => c.name.toLowerCase() === values.name.toLowerCase()
-    );
-    if (exists) {
-      alert('This name is already in contacts');
-      return;
+  const handleSubmit = async (values, helpers) => {
+    try {
+      await dispatch(addContact(values)).unwrap();
+      helpers.resetForm();
+    } catch (e) {
+      console.error(e);
     }
-    dispatch(addContact(values));
-    resetForm();
   };
 
   return (
     <Formik
-      initialValues={{ name: '', number: '' }}
+      initialValues={{ name: "", number: "" }}
       validationSchema={schema}
       onSubmit={handleSubmit}
     >
@@ -43,7 +40,11 @@ export default function ContactForm() {
         <label>
           Number
           <Field name="number" type="text" />
-          <ErrorMessage name="number" component="div" className={styles.error} />
+          <ErrorMessage
+            name="number"
+            component="div"
+            className={styles.error}
+          />
         </label>
         <button type="submit">Add contact</button>
       </Form>

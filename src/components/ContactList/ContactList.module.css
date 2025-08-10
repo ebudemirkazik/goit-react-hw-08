@@ -1,43 +1,41 @@
 .list {
   list-style: none;
   padding: 0;
-  margin: 16px auto 0;
-  max-width: 480px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+  margin-top: 20px;
 }
 
 .item {
-  background: #ffffff;
-  border: 1px solid rgba(2, 6, 23, 0.06);
-  border-radius: 12px;
-  padding: 12px 14px;
-  display: grid;
-  grid-template-columns: 1fr auto auto;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 10px;
-  box-shadow: 0 6px 16px rgba(2, 6, 23, 0.06);
-  transition: transform .06s, border-color .2s, background .2s;
-}
-.item:hover {
-  transform: translateY(-1px);
-  border-color: rgba(2, 6, 23, 0.12);
-  background: #f8fafc;
+  background: #f9f9f9;
+  padding: 12px 16px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.name { font-weight: 700; color: #0f172a; }
-.number { color: #475569; font-size: 14px; margin-right: 8px; }
+.name {
+  font-weight: 600;
+  color: #333;
+}
 
-.button {
-  background: #ef4444;
-  border: none;
+.number {
+  color: #666;
+  margin-left: 10px;
+  flex: 1;
+}
+
+.deleteBtn {
+  background: #ff4d4f;
   color: white;
-  padding: 8px 10px;
-  border-radius: 10px;
-  font-weight: 700;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
   cursor: pointer;
-  transition: filter .2s, transform .06s;
+  transition: background 0.2s ease;
 }
-.button:hover { filter: brightness(1.05); }
-.button:active { transform: translateY(1px); }
+
+.deleteBtn:hover {
+  background: #e04143;
+}

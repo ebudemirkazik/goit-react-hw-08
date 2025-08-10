@@ -1,0 +1,36 @@
+.page {
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  /* Açık gradient arka plan */
+  background:
+    radial-gradient(1200px 500px at 90% -10%, rgba(99, 102, 241, 0.15), transparent 60%),
+    radial-gradient(900px 380px at -10% 110%, rgba(34, 197, 94, 0.15), transparent 60%),
+    linear-gradient(180deg, #f7fafc, #eef2ff);
+  font-family: ui-sans-serif, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+.container {
+  padding: 30px;
+  max-width: 500px;
+  /* 420px yerine */
+  margin: 80px auto;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.container h1 {
+  margin: 0 0 18px;
+  font-weight: 800;
+  font-size: 30px;
+  letter-spacing: 0.2px;
+
+  background: linear-gradient(90deg, #16a34a, #22c55e);
+  -webkit-background-clip: text;
+  color: blue;
+}

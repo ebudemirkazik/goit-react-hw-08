@@ -1,0 +1,5 @@
+/* src/components/RegistrationForm/RegistrationForm.module.css */
+.form { display: grid; gap: 12px; max-width: 360px; }
+.label { display: grid; gap: 6px; font-weight: 600; }
+.error { color: #c00; font-size: 12px; }
+.button { padding: 10px 14px; border-radius: 8px; }

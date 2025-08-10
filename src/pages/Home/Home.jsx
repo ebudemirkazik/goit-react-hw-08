@@ -11,16 +11,11 @@ export default function Home() {
         <>
           <h2>Hoş geldiniz!</h2>
           <p style={{ marginTop: "10px" }}>
-            <Link
-              to="/contacts"
-              style={{
-                color: "#007bff",
-                textDecoration: "none",
-                fontWeight: "500",
-              }}
-            >
-              Rehberinizi görüntülemek için buraya tıklayın.
-            </Link>
+            Kişilerinizi yönetmek için{" "}
+            <Link to="/contacts" style={{ color: "#0b2fff", fontWeight: "bold" }}>
+              Rehber Sayfasına
+            </Link>{" "}
+            gidin.
           </p>
         </>
       ) : (
@@ -35,7 +30,35 @@ export default function Home() {
             color: "#856404",
           }}
         >
-          Lütfen üye olunuz veya giriş yapınız.
+          <p>Lütfen üye olunuz veya giriş yapınız.</p>
+          <div style={{ marginTop: "10px", display: "flex", gap: "10px", justifyContent: "center" }}>
+            <Link
+              to="/register"
+              style={{
+                background: "#0b2fff",
+                color: "#fff",
+                padding: "8px 14px",
+                borderRadius: "6px",
+                textDecoration: "none",
+                fontWeight: "600",
+              }}
+            >
+              Üye Ol
+            </Link>
+            <Link
+              to="/login"
+              style={{
+                background: "#28a745",
+                color: "#fff",
+                padding: "8px 14px",
+                borderRadius: "6px",
+                textDecoration: "none",
+                fontWeight: "600",
+              }}
+            >
+              Giriş Yap
+            </Link>
+          </div>
         </div>
       )}
     </div>

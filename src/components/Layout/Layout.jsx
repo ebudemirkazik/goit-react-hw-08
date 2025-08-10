@@ -1,4 +1,3 @@
-// src/components/Layout/Layout.jsx
 import AppBar from "../AppBar/AppBar";
 import styles from "./Layout.module.css";
 

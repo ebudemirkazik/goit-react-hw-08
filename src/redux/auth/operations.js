@@ -32,16 +32,19 @@ export const logout = createAsyncThunk("auth/logout", async (_, thunkAPI) => {
   }
 });
 
-// GET /users/current  (token zorunlu)
+// src/redux/auth/operations.js
 export const refreshUser = createAsyncThunk("auth/refresh", async (_, thunkAPI) => {
-  const state = thunkAPI.getState();
-  const token = state.auth.token;
+  const token = thunkAPI.getState().auth.token;
   if (!token) return thunkAPI.rejectWithValue("No token");
   try {
     setAuthHeader(token);
-    const { data } = await api.get("/users/current"); // { name, email }
+    const { data } = await api.get("/users/current");
     return data;
   } catch (e) {
+    if (e.response?.status === 401) {
+      clearAuthHeader();
+      return thunkAPI.rejectWithValue("Unauthorized");
+    }
     return thunkAPI.rejectWithValue(e.message);
   }
 });

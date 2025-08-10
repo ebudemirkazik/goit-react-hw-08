@@ -1,5 +1,24 @@
-/* src/components/RegistrationForm/RegistrationForm.module.css */
-.form { display: grid; gap: 12px; max-width: 360px; }
+.form {
+  display: grid;
+  gap: 12px;
+  max-width: 520px;      /* genişliği sınırla */
+  margin: 24px auto;     /* ortaya al */
+  padding: 20px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(11, 47, 255, 0.08);
+}
 .label { display: grid; gap: 6px; font-weight: 600; }
 .error { color: #c00; font-size: 12px; }
-.button { padding: 10px 14px; border-radius: 8px; }
+.button {
+  padding: 12px 14px;
+  border-radius: 10px;
+  width: 100%;
+  background: #0b2fff;
+  color: #fff;
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 10px 24px rgba(11,47,255,.25);
+}
+.button:hover { filter: brightness(0.95); }

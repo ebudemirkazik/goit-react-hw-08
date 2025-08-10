@@ -1,8 +1,8 @@
 .wrap { min-height: 100vh; display: flex; flex-direction: column; }
 .main { flex: 1; padding: 24px 16px; }
 .container {
-  max-width: 820px;         
-  margin: 0 auto;            
+  max-width: 820px;   
+  margin: 0 auto;     
 }
 @media (max-width: 900px) {
   .container { max-width: 100%; }
